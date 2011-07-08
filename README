@@ -1,0 +1,5 @@
+I'll be committing my solutions to the problems of projecteuler.net.
+ 
+The name of the file is the id of the problem.
+
+All the problems are coded in ruby. For the ones where optimizations are provided, those optimizations are reflected on the code.
