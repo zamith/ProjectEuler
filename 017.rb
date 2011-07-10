@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby -w
 
+## NOTE: The changes to the Fixnum class were based on http://raveendran.wordpress.com/2009/05/29/ruby-convert-number-to-english-word/
+
 class Fixnum
   def english_word
     @h = {0=>"zero", 1=>"one", 2=>"two", 3=>"three",
