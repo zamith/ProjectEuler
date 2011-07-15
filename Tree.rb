@@ -61,6 +61,7 @@ class Tree
    
   def getMaxSum
     max=0
+    nrLeafs=0
     max_array=[]
     stack = [@root]
     while stack.size > 0
@@ -79,6 +80,8 @@ class Tree
       #otherwise, go up!  
       else
         last.reset_sum
+        last.visited_right = false
+        last.visited_left = false
         stack.pop  
       end
       
