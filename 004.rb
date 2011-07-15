@@ -8,11 +8,9 @@ max = 0
 999.downto 100 do |first_set|
   999.downto 100 do |second_set|
      result=first_set*second_set
-     if result <= max
-       break
-     end 
-     max = result if isPalindrome(result.to_s) && result > max     
+     break if result <= max
+     max = result if result > max && isPalindrome(result.to_s)     
   end
 end    
 
-print max
+p max

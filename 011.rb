@@ -25,7 +25,7 @@ table=[[8,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,8],
 [01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48]]
 max = 0
 
-(0..N_rows-interval).each do |row|
+(0...N_rows).each do |row|
   (0..N_cols-interval).each do |col|
     current = table[row][col]
     down_left = table[row][col+3]
