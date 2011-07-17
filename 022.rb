@@ -6,7 +6,7 @@
 
 total_names_score=0
 File.open("resources/names_alf.txt", "r").each_line do |line|
-  line.gsub!("\"","").strip!
+  line.delete!("\"").strip!
   alf_val=0
   line.upcase.each_char do |char|
     alf_val_char = char.ord - 64
