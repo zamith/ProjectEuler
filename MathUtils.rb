@@ -1,6 +1,32 @@
 #!/usr/bin/env ruby -w
 
 module MathUtils
+  def sumOfProperDivisors n
+    sumOfDivisors(n) - n
+  end  
+  
+  def sumOfDivisors n
+    sum=1 
+    p=2 
+    while p*p<=n and n>1 
+      if n % p==0 
+        j=p*p 
+        n=n / p 
+        while n % p==0 
+          j=j*p 
+          n=n / p 
+        end     
+        sum*=(j-1) 
+        sum=sum / (p-1)
+      end 
+      p = (p==2) ? 3 : p+2  
+    end   
+    if n>1
+      sum*=(n+1)
+    end   
+    return sum
+  end  
+  
   def getFactors n
     initial_n = n
     result=[]

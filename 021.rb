@@ -10,8 +10,8 @@ end
 pairs = []
 k=220
 while k < 10000
-  possible_pair = sumArray(getFactors(k))
-  another_pair = sumArray(getFactors(possible_pair))
+  possible_pair = sumOfProperDivisors(k)
+  another_pair = sumOfProperDivisors(possible_pair)
   if k == another_pair && possible_pair != another_pair
     pairs << [another_pair,possible_pair] 
     k=(possible_pair > another_pair) ? possible_pair+1 : another_pair+1
