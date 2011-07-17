@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 
-require_relative 'MathUtils'
+require_relative '../Utils/MathUtils'
 include MathUtils
 
 def sumArray array

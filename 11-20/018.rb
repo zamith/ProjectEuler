@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 
-require_relative 'Tree'
+require_relative '../Utils/Tree'
 
 tree_str="75
 95 64
