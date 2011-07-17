@@ -1,6 +1,51 @@
 #!/usr/bin/env ruby -w
 
 module MathUtils
+  def getFactors n
+    initial_n = n
+    result=[]
+
+    if n % 2 == 0
+      lastFactor=2
+      n=n / 2
+      result << 2
+      while n % 2==0
+        result << 2
+        n=n / 2
+      end
+    else
+      lastFactor=1
+    end
+
+    factor=3
+    maxFactor= Math.sqrt(n).to_i
+    while n>1 and factor<=maxFactor
+      if n % factor==0
+        n=n / factor
+        lastFactor=factor
+        result << factor
+        while n % factor==0
+          result << factor
+          n=n / factor
+        end
+        maxFactor=Math.sqrt(n).to_i
+      end
+      factor=factor+2
+    end
+
+    result << n if n>1
+    factors = result.uniq + [1] - [initial_n]
+    result.uniq.each do |prime_factor|
+      k=2
+      while (new_factor = prime_factor * k) < initial_n
+        factors << new_factor if initial_n % new_factor == 0
+        k+=1 
+      end
+    end  
+
+    return factors.uniq  
+  end
+  
   def factorial n
     (1..n).inject do |sum,num|
       sum*=num
