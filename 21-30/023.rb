@@ -43,7 +43,8 @@ current_num=0
   end
 end
 
-# Our filter is ready (with all abundant numbers set to 1), just sum them all!
+# Our filter is ready (with all the numbers that are sums of abundant numbers set to 1), 
+# just sum them all!
 sum_abundants=0
 (1..n).each do |pos|
   sum_abundants+=pos if abundant_nums_filter[pos] == 1
